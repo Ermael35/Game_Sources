@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Net.Configuration;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_10_26_No._01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 랜덤형 문구
+
+            Random rand = new Random();
+
+            int AIchoice = rand.Next(0, 3);  // 0~2 사이의 랜덤값.
+
+
+
+            // 가위:0   바위:1    보:2
+
+            Console.WriteLine("가위:0   바위:1   보:2");
+
+            int Choice = int.Parse(Console.ReadLine());
+
+            switch(AIchoice)
+            {
+                case 0:
+                    Console.WriteLine("AI는 가위 입니다.");
+                    break;
+                case 1:
+                    Console.WriteLine("AI는 바위 입니다.");
+                    break;
+                case 2:
+                    Console.WriteLine("AI는 보 입니다.");
+                    break;
+            }
+
+            if(AIchoice<Choice)
+            {
+                Console.WriteLine("승리 하셨습니다.");
+            }
+            else if(AIchoice==2&&Choice==0)
+            {
+                Console.WriteLine("승리 하셨습니다.");
+            }
+            else if(AIchoice==Choice)
+            {
+                Console.WriteLine("무승부 입니다.");
+            }
+            else
+            {
+                Console.WriteLine("패배 하셨습니다.");
+            }
+        }
+    }
+}

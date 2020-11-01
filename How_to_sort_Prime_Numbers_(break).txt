@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_10_30_No._03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 소수에 대하여 정리 (1)
+
+            int num_01 = 97;  // 소수: 1과 자기자신으로만 나누어 떨어지는 수
+
+            for (int i = 2; i < num_01; i++)
+            {
+                if (num_01 % i == 0)
+                {
+                    Console.WriteLine("소수가 아닙니다~!");
+                    
+                    break; // 반복문 탈출
+                }
+                else
+                {
+                    Console.WriteLine("소수입니다~!");
+                    break; // 반복문 탈출
+                }
+            }
+
+
+
+            // 소수에 대하여 정리 (2)
+
+            int num_02 = 98;
+
+            bool Number_is_Prime = true;
+
+            for (int i = 2; i<num_02; i++)
+            {
+                if (num_02 % i == 0)
+                {
+                    Number_is_Prime = false;
+                    break; // 반복문 탈출
+                }
+            }
+
+            if(Number_is_Prime)
+            {
+                Console.WriteLine("소수입니다~!");
+            }
+            else
+            {
+                Console.WriteLine("소수가 아닙니다~!");
+            }
+        }
+    }
+}

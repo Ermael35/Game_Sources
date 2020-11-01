@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_10_30_No._01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             while 반복문
+
+            int count = 5;
+
+            while (count  0)
+            {
+                Console.WriteLine(Hello World~!!);
+
+                count--;
+            }
+
+             무한루프
+
+              while(true)
+              {
+                  Console.WriteLine(NeverEnding . . .);
+              }
+
+            string Answer;
+
+            do
+            {
+                Console.WriteLine(거울아 거울아 누가 제일 멋지니);
+
+                Console.WriteLine(1번  2번  3번);
+
+                Answer = Console.ReadLine();
+            }
+            while (Answer != 1번 && Answer != 2번 && Answer != 3번);
+
+            Console.WriteLine(역시 당신은 멋쟁이~!!);
+
+             무한루프
+
+              do
+              {
+                  Console.WriteLine(NeverEnding . . .);
+              }
+              while (true);
+        }
+    }
+}

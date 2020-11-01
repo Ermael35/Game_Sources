@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_10_30_No._05
+{
+    class Program
+    {
+        // 함수: Method Function Procedure
+        
+        // = 메소드, 프로시듀어
+
+        // * 클래스 안에 있어야 함.
+        // * 한정자 + 반환형식 + 이름 + (매개변수)
+
+
+        // Hello World 함수
+        static void Hello_World()
+        {
+            Console.WriteLine("Hello World~!!");
+        }
+
+        // 덧셈함수
+        static int Add(int a,int b)
+        {
+            return a + b;
+        }
+
+        // 1 증가함수 [normal]: 매개변수의 값을 복사. 입력변수 값 변화 없음.
+        static void Add_number_One_ver_01(int number)
+        {
+            number = number + 1;
+        }
+        // 1 증가함수 [ref]: 매개변수의 값을 참조. 입력변수 값 변동 있음,
+        static void Add_number_One_ver_02(ref int number)
+        {
+            number = number + 1;
+        }
+
+        // 메인함수
+        static void Main(string[] args)
+        {
+            // 헬로 월드
+            Hello_World();
+
+            Program.Hello_World();
+
+            // 덧셈함수
+            int result = Program.Add(4, 5);
+
+            Console.WriteLine(result);
+
+            // 1 증가함수
+            int A = 0;
+            Program.Add_number_One_ver_01(A);
+            Console.WriteLine(A); // 변수 A 변화.
+
+            Program.Add_number_One_ver_02(ref A);
+            Console.WriteLine(A); // 변수 A 변화.
+        }
+    }
+}

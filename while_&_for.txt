@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_10_30_No._02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // while문
+
+            int count = 0;
+
+            while(count < 5)
+            {
+                Console.WriteLine("Hello World~!!");
+                count++;
+            }
+
+
+            Console.WriteLine("-----------------------------------------------------------------------------------------");
+
+
+            //  for(초기식;조건식;증감식)
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Hello World~!!");
+            }
+        }
+    }
+}

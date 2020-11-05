@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_11_04_No._01
+{
+    class Program
+    {
+        //  출력함수
+        static void Print(int a)
+        {
+            Console.WriteLine(a);
+        }
+
+        //  덧셈함수
+        static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        //  덧셈 출력함수
+        static void Add_and_Print(int a, int b)
+        {
+            int result = a + b;
+
+            Program.Print(result);
+        }
+
+        static void Main(string[] args)
+        {
+            //  디버깅: 프로그램을 다양한 방법으로 실행해 보면서 그 프로그램의 전체적인 상태를 분석하는 일.
+
+            //  F5 키 : 일반 실행.
+            //  ctrl + F5 키 : 프로그램 전체 실행 후 결과 출력.
+            //  F9 키 : 해당 라인에서 프로그램 일시 중지.
+            //  F10 키 : 함수 단위(메소드 단위) 로 프로그램 실행.
+            //  F11 키 : 명령어 한 단위 한 단위 씩 프로그램 실행.
+
+            //  호출스택 : 호출된 해당 라인 표시. (아래 위치일수록 범위가 더 넓다.)
+            //  조사식 : 해당 라인에서 사용된 모든 변수표시. (vmfhr실행중 변수 내용 변경 가능.)
+            
+            //  F9 키 + 우클릭-조건 : 해당 조건일 경우에만 해당 라인에서 일시중지. [빨간원에 하얀색 십자표시]
+            //  F9 키 + 우클릭-해제 : 해당 라인 마크. (일시중지는 하지 않음.)
+
+            int num_01 = 10;
+            int num_02 = 20;
+
+            int value_01 = Program.Add(num_01, num_02);
+            value_01 = value_01 + 1;
+            Console.WriteLine(value_01);
+
+            Program.Add_and_Print(num_01, num_02);
+        }
+    }
+}

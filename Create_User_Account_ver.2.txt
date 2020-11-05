@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_11_05_No._01
+{
+    class Program
+    {
+        // 구조체 생성 방법
+        // struct (구조체 이름)
+
+        struct Player
+        {
+            // public 키워드를 사용해야 해당변수를 다른 곳에서도 사용할 수 있다.
+            public int UserJob;
+            public int User_HP;
+            public int User_Attack;
+            public int User_Defense;
+        }
+
+        static int Select_Player_Job()
+        {
+            int Job;
+
+            do
+            {
+                Console.WriteLine("직업을 선택하세요!");
+
+                Console.WriteLine("[1] 기사");
+                Console.WriteLine("[2] 궁수");
+                Console.WriteLine("[3] 마법사");
+
+                Job = int.Parse(Console.ReadLine());
+            }
+            while (Job != 1 && Job != 2 && Job != 3);
+
+            return Job;
+        }
+
+        static void User_Account(out Player player_name) // out 키워드는 초기화가 필요하다.
+        {
+            player_name = new Player(); // player_name 초기화. (구조체 초기화)
+
+            player_name.UserJob = Program.Select_Player_Job();
+
+            switch(player_name.UserJob)
+            {
+                case 1:
+                    player_name.User_HP = 100;
+                    player_name.User_Attack = 10;
+                    player_name.User_Defense = 30;
+                    break;
+                case 2:
+                    player_name.User_HP = 75;
+                    player_name.User_Attack = 20;
+                    player_name.User_Defense = 15;
+                    break;
+                case 3:
+                    player_name.User_HP = 50;
+                    player_name.User_Attack = 35;
+                    player_name.User_Defense = 8;
+                    break;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            // Player player_01 구조체 선언
+            // 
+            Player player_01;
+
+            // 1) 캐릭터 직업선택
+            //
+            // 2) 캐릭터 생성 (기사:100/10, 궁수:75/15, 마법사:50/20)
+            //
+            Program.User_Account(out player_01);
+
+            Console.WriteLine("Job:{0}, HP:{1}, Attack:{2}, Defense:{3}", player_01.UserJob, player_01.User_HP, player_01.User_Attack, player_01.User_Defense);
+        }
+    }
+}

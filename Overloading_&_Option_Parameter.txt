@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_11_01_No._01
+{
+    class Program
+    {
+        // 함수(메소드) 오버로딩: 이름의 재사용. 매개변수가 다르면 가능.
+        static int Add(int a,int b)
+        {
+            Console.WriteLine("Add int 호출");
+            return a + b;
+        }
+
+        static float Add(float a, float b)
+        {
+            Console.WriteLine("Add float 호출");
+            return a + b;
+        }
+
+
+        // 선택적 매개변수 함수: 매개변수 기본값 설정. 설정된 매개변수는 값이 없을 경우 기본값으로 사용. 매개변수 옵션. 
+        static int multiply(int a, int b, int c = 1)
+        {
+            Console.WriteLine("multiply int 호출");
+            return a * b * c;
+        }
+
+
+        static void Main(string[] args)
+        {
+            int result_01 = Program.Add(2, 3);
+            Console.WriteLine(result_01);
+
+
+            float result_02 = Program.Add(2.1f, 3.2f);
+            Console.WriteLine(result_02);
+
+            int result_03 = Program.multiply(3, 5);
+            Console.WriteLine(result_03);
+
+            int result_04 = Program.multiply(3, 5, 2);
+            Console.WriteLine(result_04);
+        }
+    }
+}

@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_11_03_No._01
+{
+    class Program
+    {
+        //  절댓값 함수 ver.1
+        static void Absolute_value_ver_01(int n)
+        {
+            if (n < 0) Console.WriteLine(-n);
+            else if (n == 0) Console.WriteLine(0);
+            else Console.WriteLine(n);
+        }
+
+        //  절댓값 함수 ver.2
+        static int Absolute_value_ver_02(int n)
+        {
+            if (n < 0) return -n;
+            else if (n == 0) return 0;
+            else return n;
+        }
+
+
+        //  Factorial 함수 ver.1 [Stack Overflow 발생]
+
+        //  static int Factorial_ver_01(int n)
+        //  {
+        //        return n * Factorial_ver_01(n - 1);
+        //  }
+
+
+        //  Factorial 함수 ver.2 [재귀함수 버젼]
+        static int Factorial_ver_02(int n)
+        {
+            if(n <= 1)
+            {
+                return 1;
+            }
+
+            return n * Factorial_ver_02(n - 1);  // 재귀함수 형식 사용. 해당 함수 내부에 함수 자기자신이 사용.
+        }
+
+
+        //  Factorial 함수 ver.3
+        static int Factorial_ver_03(int n)
+        {
+            int result = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                result = result * i;
+            }
+
+            return result;
+        }
+
+
+        static void Main(string[] args)
+        {
+            //  프로그래머 문제 해결 기준: 결과값만 제대로 나오면 된다.
+
+            Console.WriteLine("-------------------------------------------------------------------------------------------");
+
+            //  Ex) 구구단 만들기 문제
+            //  int i = 단,  int j = 숫자.
+            for(int i = 2; i<=9; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                {
+                    Console.WriteLine("{0} * {1} = {2}", i, j, i * j);
+                }
+            }
+
+            Console.WriteLine("-------------------------------------------------------------------------------------------");
+
+            //  Ex) 별찍기 만들기 문제 (삼각형)
+            char Shape = char.Parse(Console.ReadLine());
+            int Line = int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < Line; i++)
+            {
+                for(int j = 0; j<= i; j++)
+                {
+                    Console.Write(Shape);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("-------------------------------------------------------------------------------------------");
+
+            //  Ex) Factorial 메소드 구현 문제
+
+            //      [단, n >= 1 일때만 성립]
+            //      n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1
+            int value_01 = Factorial_ver_02(3);
+
+            int value_02 = Factorial_ver_03(5);
+
+            Console.WriteLine(value_01);
+            Console.WriteLine(value_02);
+
+            Console.WriteLine("-------------------------------------------------------------------------------------------");
+
+            //  Ex) 절댓값 함수 문제
+
+            //      |x| = x  (x>0)
+            //          = 0  (x=0, x는 0과 같다)
+            //          = -x (x<0)
+
+            Absolute_value_ver_01(-5);
+            Console.WriteLine(Absolute_value_ver_02(-10));
+        }
+    }
+}

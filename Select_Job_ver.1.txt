@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2020_11_04_No._02
+{
+    class Program
+    {
+        static int Select_Player_Job()
+        {
+            int Job;
+
+            do
+            {
+                Console.WriteLine("직업을 선택하세요!");
+
+                Console.WriteLine("[1] 기사");
+                Console.WriteLine("[2] 궁수");
+                Console.WriteLine("[3] 마법사");
+
+                Job = int.Parse(Console.ReadLine());
+            }
+            while (Job != 1 && Job != 2 && Job != 3);
+
+            return Job;
+        }
+
+        static void Main(string[] args)
+        {
+            Program.Select_Player_Job();
+
+        }
+    }
+}
